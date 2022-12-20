@@ -1,0 +1,6 @@
+sulu_admin:
+    resources:
+        securitytxt:
+            routes:
+                list: app.get_securitytxt_list
+                detail: app.get_securitytxt

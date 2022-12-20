@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="true"
+         bootstrap="tests/bootstrap.php"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+  <coverage processUncoveredFiles="true">
+    <include>
+      <directory suffix=".php">./Admin/</directory>
+      <directory suffix=".php">./Common/</directory>
+      <directory suffix=".php">./Controller/</directory>
+      <directory suffix=".php">./DependencyInjection/</directory>
+      <directory suffix=".php">./Entity/</directory>
+      <directory suffix=".php">./Repository/</directory>
+    </include>
+  </coverage>
+  <testsuites>
+    <testsuite name="unit">
+      <directory suffix="UnitTest.php">./Tests/</directory>
+    </testsuite>
+    <testsuite name="integration">
+      <directory suffix="IntegrationTest.php">./Tests/</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>

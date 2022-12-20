@@ -1,0 +1,102 @@
+<?xml version="1.0" ?>
+<form xmlns="http://schemas.sulu.io/template/template"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/form-1.0.xsd">
+    <key>securitytxt_details</key>
+
+    <properties>
+        <property name="contact" type="url" mandatory="true">
+            <meta>
+                <title>securitytxt.contact</title>
+                <info_text lang="en">A link or e-mail address for people to contact you about security issues.</info_text>
+            </meta>
+
+            <params>
+                <param name="defaults" type="collection">
+                    <param name="scheme" value="https://"/>
+                </param>
+
+                <param name="schemes" type="collection">
+                    <param name="https://"/>
+                    <param name="mailto://"/>
+                    <param name="tel://"/>
+                </param>
+            </params>
+        </property>
+
+        <property name="expires" type="date" mandatory="true">
+            <meta>
+                <title>securitytxt.expires</title>
+                <info_text lang="en">The date when the content of the security.txt file should be considered stale (so security researchers should then not trust it). Make sure you update this value periodically and keep your file under review.</info_text>
+            </meta>
+        </property>
+
+        <property name="encryption" type="url">
+            <meta>
+                <title>securitytxt.encryption</title>
+                <info_text lang="en">A link to a key which security researchers should use to securely talk to you.</info_text>
+            </meta>
+
+            <params>
+                <param name="defaults" type="collection">
+                    <param name="scheme" value="https://"/>
+                </param>
+
+                <param name="schemes" type="collection">
+                    <param name="https://"/>
+                </param>
+            </params>
+        </property>
+
+        <property name="acknowledgments" type="url">
+            <meta>
+                <title>securitytxt.acknowledgments</title>
+                <info_text lang="en">A link to a web page where you say thank you to security researchers who have helped you.</info_text>
+            </meta>
+
+            <params>
+                <param name="defaults" type="collection">
+                    <param name="scheme" value="https://"/>
+                </param>
+
+                <param name="schemes" type="collection">
+                    <param name="https://"/>
+                </param>
+            </params>
+        </property>
+
+        <property name="policy" type="url">
+            <meta>
+                <title>securitytxt.policy</title>
+                <info_text lang="en">A link to a policy detailing what security researchers should do when searching for or reporting security issues.</info_text>
+            </meta>
+
+            <params>
+                <param name="defaults" type="collection">
+                    <param name="scheme" value="https://"/>
+                </param>
+
+                <param name="schemes" type="collection">
+                    <param name="https://"/>
+                </param>
+            </params>
+        </property>
+
+        <property name="hiring" type="url">
+            <meta>
+                <title>securitytxt.hiring</title>
+                <info_text lang="en">A link to any security-related job openings in your organisation.</info_text>
+            </meta>
+
+            <params>
+                <param name="defaults" type="collection">
+                    <param name="scheme" value="https://"/>
+                </param>
+
+                <param name="schemes" type="collection">
+                    <param name="https://"/>
+                </param>
+            </params>
+        </property>
+    </properties>
+</form>

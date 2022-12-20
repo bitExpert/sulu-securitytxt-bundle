@@ -1,0 +1,20 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    BitExpert\Sulu\SecuritytxtBundle\:
+        resource: '../../*'
+        exclude: '../../{DependencyInjection,Entity,Migrations,Tests,Kernel.php, Wrapper}'
+
+    BitExpert\Sulu\SecuritytxtBundle\Admin\:
+        resource: '../../Admin'
+        tags: ['sulu.admin', {name: 'sulu.context', context: 'admin'}]
+
+    BitExpert\Sulu\SecuritytxtBundle\Controller\Admin\:
+        resource: '../../Controller/Admin'
+        tags: ['controller.service_arguments', {name: 'sulu.context', context: 'admin'}]
+
+    BitExpert\Sulu\SecuritytxtBundle\Controller\Website\:
+        resource: '../../Controller/Website'
+        tags: ['controller.service_arguments', {name: 'sulu.context', context: 'website'}]
