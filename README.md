@@ -7,7 +7,7 @@ According to [securitytxt.org](https://securitytxt.org) the main purpose of secu
 ## Installation
 
 ```bash
-composer require bitexpert/sulu-securitytxt-bundle:dev-main
+composer require bitexpert/sulu-securitytxt-bundle
 ```
 
 1. Register the bundle in the file `config/bundles.php`
