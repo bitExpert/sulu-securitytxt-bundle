@@ -42,6 +42,11 @@ securitytxt_website:
   resource: "@BitExpertSuluSecuritytxtBundle/Resources/config/routing_website.yaml"
 ```
 
+4. Run Doctrine Schema Update
+```bash
+./bin/adminconsole doctrine:schema:update -f
+```
+
 ## Usage
 
 Once installed, this bundle adds a tab called "Security.txt" to the webspaces configuration which allows you to create
