@@ -29,7 +29,8 @@ class SecuritytxtAdmin extends Admin
 
     public function __construct(
         private readonly ViewBuilderFactoryInterface $viewBuilderFactory
-    ) {}
+    ) {
+    }
 
     public function configureViews(ViewCollection $viewCollection): void
     {

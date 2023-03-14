@@ -9,4 +9,5 @@ parameters:
         - DependencyInjection
         - Entity
         - Repository
-
+    ignoreErrors:
+        - "#Casting to int something that\\'s already int.#"
