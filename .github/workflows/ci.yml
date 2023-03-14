@@ -1,0 +1,36 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  run:
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        operating-system: ['ubuntu-latest']
+        php-versions: ['8.1', '8.2']
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Configure PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          tools: composer:v2
+          coverage: xdebug
+
+      - name: Install Composer dependencies
+        run: composer install
+
+      - name: Composer license check
+        run: composer check-license
+
+      - name: Codesniffer
+        run: composer cs-check
+
+      - name: Static code analysis
+        run: composer analyze
