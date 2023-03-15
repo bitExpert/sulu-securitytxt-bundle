@@ -4924,16 +4924,16 @@
         },
         {
             "name": "sulu/sulu",
-            "version": "2.5.7",
+            "version": "2.5.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sulu/sulu.git",
-                "reference": "0d92f0a3e837809333077fcedc2bd43f2752d7e2"
+                "reference": "3c005731b12b7d06ecfa71d849b6cf7a4f4d383d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sulu/sulu/zipball/0d92f0a3e837809333077fcedc2bd43f2752d7e2",
-                "reference": "0d92f0a3e837809333077fcedc2bd43f2752d7e2",
+                "url": "https://api.github.com/repos/sulu/sulu/zipball/3c005731b12b7d06ecfa71d849b6cf7a4f4d383d",
+                "reference": "3c005731b12b7d06ecfa71d849b6cf7a4f4d383d",
                 "shasum": ""
             },
             "require": {
@@ -4986,6 +4986,7 @@
                 "symfony/console": "^5.4 || ^6.0",
                 "symfony/css-selector": "^5.4 || ^6.0",
                 "symfony/dependency-injection": "^5.4 || ^6.0",
+                "symfony/deprecation-contracts": "^2.1 || ^3.0",
                 "symfony/dom-crawler": "^5.4 || ^6.0",
                 "symfony/event-dispatcher": "^5.4 || ^6.0",
                 "symfony/event-dispatcher-contracts": "^2.1 || ^3.0",
@@ -5152,7 +5153,7 @@
                 "issues": "https://github.com/sulu/skeleton/issues",
                 "source": "https://github.com/sulu/skeleton"
             },
-            "time": "2023-02-15T12:25:30+00:00"
+            "time": "2023-03-14T21:14:18+00:00"
         },
         {
             "name": "symfony-cmf/routing",
