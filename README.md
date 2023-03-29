@@ -15,18 +15,7 @@ composer require bitexpert/sulu-securitytxt-bundle
 BitExpert\Sulu\SecuritytxtBundle\BitExpertSuluSecuritytxtBundle::class => ['all' => true],
 ```
 
-2. Create file `config/packages/securitytxt.yaml` to expose the `securitytxt` resources:
-```yaml
-sulu_admin:
-    resources:
-        securitytxt:
-            routes:
-                list: app.get_securitytxt_list
-                detail: app.get_securitytxt
-
-```
-
-3. Configure the routing as follows:
+2. Configure the routing as follows:
 
 Create file `config/routes/securitytxt_admin.yaml`:
 ```yaml
@@ -42,7 +31,7 @@ securitytxt_website:
   resource: "@BitExpertSuluSecuritytxtBundle/Resources/config/routing_website.yaml"
 ```
 
-4. Run Doctrine Schema Update
+3. Run Doctrine Schema Update
 ```bash
 ./bin/adminconsole doctrine:schema:update -f
 ```

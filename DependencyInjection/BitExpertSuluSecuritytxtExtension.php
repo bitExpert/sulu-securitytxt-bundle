@@ -35,6 +35,14 @@ class BitExpertSuluSecuritytxtExtension extends Extension implements PrependExte
                             __DIR__.'/../Resources/config/lists',
                         ],
                     ],
+                    'resources' => [
+                        'securitytxt' => [
+                            'routes' => [
+                                'list' => 'app.get_securitytxt_list',
+                                'detail' => 'app.get_securitytxt',
+                            ],
+                        ],
+                    ],
                 ]
             );
         }
