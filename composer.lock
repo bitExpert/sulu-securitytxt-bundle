@@ -10888,16 +10888,16 @@
         },
         {
             "name": "madewithlove/license-checker",
-            "version": "v1.4",
+            "version": "v1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/madewithlove/license-checker-php.git",
-                "reference": "579e4e8f3ffde7b114a5e070c6a12dbd14174511"
+                "reference": "0a0fe2859c834a51bd989830685a593071fca33f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/madewithlove/license-checker-php/zipball/579e4e8f3ffde7b114a5e070c6a12dbd14174511",
-                "reference": "579e4e8f3ffde7b114a5e070c6a12dbd14174511",
+                "url": "https://api.github.com/repos/madewithlove/license-checker-php/zipball/0a0fe2859c834a51bd989830685a593071fca33f",
+                "reference": "0a0fe2859c834a51bd989830685a593071fca33f",
                 "shasum": ""
             },
             "require": {
@@ -10907,10 +10907,10 @@
                 "symfony/yaml": "^4.0 || ^5.0 || ^6.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.8",
-                "phpunit/phpunit": "^9.5",
-                "psalm/plugin-phpunit": "^0.15.1",
-                "vimeo/psalm": "^4.4"
+                "friendsofphp/php-cs-fixer": "^3.16",
+                "phpunit/phpunit": "^10.1",
+                "psalm/plugin-phpunit": "^0.18",
+                "vimeo/psalm": "^5.9"
             },
             "bin": [
                 "bin/license-checker"
@@ -10934,9 +10934,9 @@
             "description": "CLI tool to verify allowed licenses for composer dependencies",
             "support": {
                 "issues": "https://github.com/madewithlove/license-checker-php/issues",
-                "source": "https://github.com/madewithlove/license-checker-php/tree/v1.4"
+                "source": "https://github.com/madewithlove/license-checker-php/tree/v1.5"
             },
-            "time": "2022-05-10T11:15:08+00:00"
+            "time": "2023-04-20T13:51:22+00:00"
         },
         {
             "name": "myclabs/deep-copy",
