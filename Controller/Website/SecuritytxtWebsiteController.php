@@ -56,7 +56,7 @@ class SecuritytxtWebsiteController extends AbstractController
             $expires = $entity->getExpires();
             $expires = new DateTime($expires);
 
-            $content .= 'Contact: '.str_replace('mailto://', 'mailto:', $entity->getContact())."\n";
+            $content .= 'Contact: '.str_replace('mailto://', 'mailto:', (string) $entity->getContact())."\n";
             $content .= 'Expires: '.$expires->format(DateTime::ATOM)."\n";
             if (is_string($entity->getEncryption()) && ($entity->getEncryption() !== '')) {
                 $content .= 'Encryption: '.$entity->getEncryption()."\n";
