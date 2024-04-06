@@ -1,6 +1,6 @@
 # sulu-securitytxt-bundle
 
-![Mastodon Follow](https://img.shields.io/mastodon/follow/109408681246972700?domain=https://rheinneckar.social)
+[![Mastodon Follow](https://img.shields.io/mastodon/follow/109408681246972700?domain=https://rheinneckar.social)](https://rheinneckar.social/@bitexpert)
 
 This is a Sulu Bundle to manage security.txt files for your Sulu webspaces.
 
