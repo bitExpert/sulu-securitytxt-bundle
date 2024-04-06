@@ -1,5 +1,7 @@
 # sulu-securitytxt-bundle
 
+![Mastodon Follow](https://img.shields.io/mastodon/follow/109408681246972700?domain=https://rheinneckar.social)
+
 This is a Sulu Bundle to manage security.txt files for your Sulu webspaces.
 
 According to [securitytxt.org](https://securitytxt.org) the main purpose of security.txt is to help make things easier for companies and security researchers when trying to secure platforms. Thanks to security.txt, security researchers can easily get in touch with companies about security issues.
