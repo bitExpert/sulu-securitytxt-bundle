@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 0.3.0
+
+### Added
+
+- [#242](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/242) Bump sulu/sulu to 2.5.19
+- [#240](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/240) Bump phpstan/phpstan to 1.11.5
+- [#238](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/238) Bump phpunit/phpunit to 10.5.21
+- [#237](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/237) Bump phpstan/extension-installer to 1.4.1
+- [#234](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/234) Bump symfony/framework-bundle to 6.4.8
+- [#233](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/233) Bump symfony/http-foundation to 6.4.8
+- [#232](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/232) Bump symfony/http-kernel to 6.4.8
+- [#231](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/231) Bump symfony/routing to 6.4.8
+- [#230](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/230) Bump symfony/dependency-injection to 6.4.8
+- [#227](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/227) Bump squizlabs/php_codesniffer to 3.10.1
+- [#223](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/223) Bump phpstan/phpstan-phpunit to 1.4.0
+- [#222](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/222) Bump phpstan/phpstan-strict-rules to 1.6.0
+- [#196](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/196) Bump madewithlove/license-checker to 1.6
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
 ## 0.2.0
 
 ### Added
