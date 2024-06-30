@@ -21,40 +21,72 @@ use Sulu\Bundle\AdminBundle\Admin\View\ViewCollection;
 use Sulu\Bundle\AdminBundle\Exception\NavigationItemNotFoundException;
 use Sulu\Bundle\PageBundle\Admin\PageAdmin;
 use Sulu\Bundle\WebsiteBundle\Entity\AnalyticsInterface;
+use Sulu\Component\Security\Authorization\PermissionTypes;
+use Sulu\Component\Security\Authorization\SecurityCheckerInterface;
 
 class SecuritytxtAdmin extends Admin
 {
+    final public const SECURITY_CONTEXT = 'bitexpert.securitytxt';
+
     final public const SECURITYTXT_LIST_KEY = 'securitytxt';
     final public const SECURITYTXT_LIST_VIEW = 'app.securitytxt_list';
 
     public function __construct(
-        private readonly ViewBuilderFactoryInterface $viewBuilderFactory
+        private readonly ViewBuilderFactoryInterface $viewBuilderFactory,
+        private readonly SecurityCheckerInterface    $securityChecker
     ) {
     }
 
     public function configureViews(ViewCollection $viewCollection): void
     {
-        $toolbarActions = [
-            new ToolbarAction('sulu_admin.add'),
-            new ToolbarAction('sulu_admin.delete'),
-        ];
+        $toolbarActions = [];
 
-        $viewCollection->add(
-            $this->viewBuilderFactory
-                ->createFormOverlayListViewBuilder(static::SECURITYTXT_LIST_VIEW, '/securitytxt')
-                ->setResourceKey(Securitytxt::RESOURCE_KEY)
-                ->setListKey(self::SECURITYTXT_LIST_KEY)
-                ->addListAdapters(['table'])
-                ->addAdapterOptions(['table' => ['skin' => 'light']])
-                ->addRouterAttributesToListRequest(['webspace'])
-                ->addRouterAttributesToFormRequest(['webspace'])
-                ->disableSearching()
-                ->setFormKey('securitytxt_details')
-                ->setTabTitle('securitytxt.title')
-                ->setTabOrder(2048)
-                ->addToolbarActions($toolbarActions)
-                ->setParent(PageAdmin::WEBSPACE_TABS_VIEW)
-                ->addRerenderAttribute('webspace')
-        );
+        if ($this->securityChecker->hasPermission(static::SECURITY_CONTEXT, PermissionTypes::ADD)) {
+            $toolbarActions[] = new ToolbarAction('sulu_admin.add');
+        }
+
+        if ($this->securityChecker->hasPermission(static::SECURITY_CONTEXT, PermissionTypes::DELETE)) {
+            $toolbarActions[] = new ToolbarAction('sulu_admin.delete');
+        }
+
+        if ($this->securityChecker->hasPermission(static::SECURITY_CONTEXT, PermissionTypes::VIEW)) {
+            $viewCollection->add(
+                $this->viewBuilderFactory
+                    ->createFormOverlayListViewBuilder(static::SECURITYTXT_LIST_VIEW, '/securitytxt')
+                    ->setResourceKey(Securitytxt::RESOURCE_KEY)
+                    ->setListKey(self::SECURITYTXT_LIST_KEY)
+                    ->addListAdapters(['table'])
+                    ->addAdapterOptions(['table' => ['skin' => 'light']])
+                    ->addRouterAttributesToListRequest(['webspace'])
+                    ->addRouterAttributesToFormRequest(['webspace'])
+                    ->disableSearching()
+                    ->setFormKey('securitytxt_details')
+                    ->setTabTitle('securitytxt.title')
+                    ->setTabOrder(2048)
+                    ->addToolbarActions($toolbarActions)
+                    ->setParent(PageAdmin::WEBSPACE_TABS_VIEW)
+                    ->addRerenderAttribute('webspace')
+            );
+        }
+    }
+
+    public function getSecurityContexts()
+    {
+        return [
+            'BitExpert' => [
+                'Securitytxt' => [
+                    static::SECURITY_CONTEXT => [
+                        PermissionTypes::VIEW,
+                        PermissionTypes::ADD,
+                        PermissionTypes::DELETE,
+                    ],
+                ],
+            ],
+        ];
+    }
+
+    public function getConfigKey(): ?string
+    {
+        return 'bitexpert.securitytxt';
     }
 }
