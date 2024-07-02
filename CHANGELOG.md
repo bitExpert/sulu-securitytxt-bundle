@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 0.4.0
+
+### Added
+
+- [#244](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/244) Update phpunit/phpunit requirement from ^10.0 to ^11.2
+- [#243](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/243) Sulu 2.6 compatibility
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
 ## 0.3.0
 
 ### Added
