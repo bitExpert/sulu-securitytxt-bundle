@@ -13,21 +13,18 @@ namespace BitExpert\Sulu\SecuritytxtBundle\Admin;
 
 use BitExpert\Sulu\SecuritytxtBundle\Entity\Securitytxt;
 use Sulu\Bundle\AdminBundle\Admin\Admin;
-use Sulu\Bundle\AdminBundle\Admin\Navigation\NavigationItem;
-use Sulu\Bundle\AdminBundle\Admin\Navigation\NavigationItemCollection;
 use Sulu\Bundle\AdminBundle\Admin\View\ToolbarAction;
 use Sulu\Bundle\AdminBundle\Admin\View\ViewBuilderFactoryInterface;
 use Sulu\Bundle\AdminBundle\Admin\View\ViewCollection;
-use Sulu\Bundle\AdminBundle\Exception\NavigationItemNotFoundException;
 use Sulu\Bundle\PageBundle\Admin\PageAdmin;
-use Sulu\Bundle\WebsiteBundle\Entity\AnalyticsInterface;
 use Sulu\Component\Security\Authorization\PermissionTypes;
 use Sulu\Component\Security\Authorization\SecurityCheckerInterface;
+use Sulu\Component\Security\Authorization\SecurityCondition;
 
 class SecuritytxtAdmin extends Admin
 {
+    final public const SYSTEM = 'BitExpert';
     final public const SECURITY_CONTEXT = 'bitexpert.securitytxt';
-
     final public const SECURITYTXT_LIST_KEY = 'securitytxt';
     final public const SECURITYTXT_LIST_VIEW = 'app.securitytxt_list';
 
@@ -39,17 +36,19 @@ class SecuritytxtAdmin extends Admin
 
     public function configureViews(ViewCollection $viewCollection): void
     {
+        $securityCondition = new SecurityCondition(static::SECURITY_CONTEXT, null, null, null, self::SYSTEM);
+
         $toolbarActions = [];
 
-        if ($this->securityChecker->hasPermission(static::SECURITY_CONTEXT, PermissionTypes::ADD)) {
+        if ($this->securityChecker->hasPermission($securityCondition, PermissionTypes::ADD)) {
             $toolbarActions[] = new ToolbarAction('sulu_admin.add');
         }
 
-        if ($this->securityChecker->hasPermission(static::SECURITY_CONTEXT, PermissionTypes::DELETE)) {
+        if ($this->securityChecker->hasPermission($securityCondition, PermissionTypes::DELETE)) {
             $toolbarActions[] = new ToolbarAction('sulu_admin.delete');
         }
 
-        if ($this->securityChecker->hasPermission(static::SECURITY_CONTEXT, PermissionTypes::VIEW)) {
+        if ($this->securityChecker->hasPermission($securityCondition, PermissionTypes::VIEW)) {
             $viewCollection->add(
                 $this->viewBuilderFactory
                     ->createFormOverlayListViewBuilder(static::SECURITYTXT_LIST_VIEW, '/securitytxt')
@@ -73,7 +72,7 @@ class SecuritytxtAdmin extends Admin
     public function getSecurityContexts()
     {
         return [
-            'BitExpert' => [
+            self::SYSTEM => [
                 'Securitytxt' => [
                     static::SECURITY_CONTEXT => [
                         PermissionTypes::VIEW,
