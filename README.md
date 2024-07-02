@@ -43,6 +43,8 @@ securitytxt_website:
 Once installed, this bundle adds a tab called "Security.txt" to the webspaces configuration which allows you to create
 new security.txt entries for the different webspaces. For each webspace only one security.txt configuration can be saved.
 
+Since 0.5.0: Only users with the Securitytxt permissions can view, add, edit or delete the security.txt entries.
+
 ## Contribute
 
 Please feel free to fork and extend existing or add new features and send a pull request with your changes! To establish
