@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 0.5.0
+
+### Added
+
+- [#117](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/117) Add Security Context
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
 ## 0.4.0
 
 ### Added
