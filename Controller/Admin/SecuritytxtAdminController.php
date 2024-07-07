@@ -40,7 +40,7 @@ class SecuritytxtAdminController extends AbstractController
     ) {
     }
 
-    #[Route(path: 'securitytxt/{id}', name: 'app.get_securitytxt', methods: ['GET'])]
+    #[Route(path: 'securitytxt/{id}', name: 'bitexpert.get_securitytxt', methods: ['GET'])]
     public function getAction(int $id): Response
     {
         $entity = $this->repository->findById($id);
@@ -51,7 +51,7 @@ class SecuritytxtAdminController extends AbstractController
         return $this->json($this->getDataForEntity($entity));
     }
 
-    #[Route(path: 'securitytxt/{id}', name: 'app.put_securitytxt', methods: ['PUT'])]
+    #[Route(path: 'securitytxt/{id}', name: 'bitexpert.put_securitytxt', methods: ['PUT'])]
     public function putAction(int $id, Request $request): Response
     {
         $entity = $this->repository->findById($id);
@@ -68,7 +68,7 @@ class SecuritytxtAdminController extends AbstractController
         return $this->json($this->getDataForEntity($entity));
     }
 
-    #[Route(path: 'securitytxt', name: 'app.post_securitytxt', methods: ['POST'])]
+    #[Route(path: 'securitytxt', name: 'bitexpert.post_securitytxt', methods: ['POST'])]
     public function postAction(Request $request): Response
     {
         $entity = $this->repository->create();
@@ -83,7 +83,7 @@ class SecuritytxtAdminController extends AbstractController
         return $this->json($this->getDataForEntity($entity), 201);
     }
 
-    #[Route(path: 'securitytxt/{id}', name: 'app.delete_securitytxt', methods: ['DELETE'])]
+    #[Route(path: 'securitytxt/{id}', name: 'bitexpert.delete_securitytxt', methods: ['DELETE'])]
     public function deleteAction(int $id): Response
     {
         $this->repository->remove($id);
@@ -91,7 +91,7 @@ class SecuritytxtAdminController extends AbstractController
         return $this->json(null, 204);
     }
 
-    #[Route(path: 'securitytxt', name: 'app.get_securitytxt_list', methods: ['GET'])]
+    #[Route(path: 'securitytxt', name: 'bitexpert.get_securitytxt_list', methods: ['GET'])]
     public function getListAction(): Response
     {
         $listRepresentation = $this->doctrineListRepresentationFactory->createDoctrineListRepresentation(

@@ -26,7 +26,7 @@ class SecuritytxtAdmin extends Admin
     final public const SYSTEM = 'BitExpert';
     final public const SECURITY_CONTEXT = 'bitexpert.securitytxt';
     final public const SECURITYTXT_LIST_KEY = 'securitytxt';
-    final public const SECURITYTXT_LIST_VIEW = 'app.securitytxt_list';
+    final public const SECURITYTXT_LIST_VIEW = 'bitexpert.securitytxt_list';
 
     public function __construct(
         private readonly ViewBuilderFactoryInterface $viewBuilderFactory,
