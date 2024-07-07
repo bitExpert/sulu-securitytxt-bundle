@@ -38,8 +38,8 @@ class BitExpertSuluSecuritytxtExtension extends Extension implements PrependExte
                     'resources' => [
                         'securitytxt' => [
                             'routes' => [
-                                'list' => 'app.get_securitytxt_list',
-                                'detail' => 'app.get_securitytxt',
+                                'list' => 'bitexpert.get_securitytxt_list',
+                                'detail' => 'bitexpert.get_securitytxt',
                             ],
                         ],
                     ],

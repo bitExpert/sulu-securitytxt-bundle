@@ -11,3 +11,6 @@ parameters:
         - Repository
     ignoreErrors:
         - "#Casting to int something that\\'s already int.#"
+        -
+            message: "#::getSecurityContexts\\(\\) should return array#"
+            path: Admin/SecuritytxtAdmin.php
