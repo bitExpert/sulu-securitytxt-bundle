@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace BitExpert\Sulu\SecuritytxtBundle;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class BitExpertSuluSecuritytxtBundle extends Bundle
