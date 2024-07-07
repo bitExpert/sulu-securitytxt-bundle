@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 0.6.0
+
+### Added
+
+- Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- [#245](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/245) Rename route prefix
+
 ## 0.5.0
 
 ### Added
