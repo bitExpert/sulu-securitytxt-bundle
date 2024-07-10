@@ -33,7 +33,7 @@
     "sulu/sulu": "^2.6",
     "symfony/dependency-injection": "^6.0",
     "symfony/framework-bundle": "^6.0",
-    "symfony/http-foundation": "^6.0",
+    "symfony/http-foundation": "^7.1",
     "symfony/http-kernel": "^6.0",
     "symfony/routing": "^6.0"
   },
