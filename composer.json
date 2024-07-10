@@ -39,7 +39,7 @@
   },
   "require-dev": {
     "jackalope/jackalope": "^1.4",
-    "jackalope/jackalope-doctrine-dbal": "^1.8",
+    "jackalope/jackalope-doctrine-dbal": "^2.0",
     "madewithlove/license-checker": "^1.4",
     "phly/keep-a-changelog": "^2.12",
     "phpstan/extension-installer": "^1.2",
