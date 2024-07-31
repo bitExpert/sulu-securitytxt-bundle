@@ -35,7 +35,7 @@
     "symfony/framework-bundle": "^6.0",
     "symfony/http-foundation": "^6.0",
     "symfony/http-kernel": "^6.0",
-    "symfony/routing": "^6.0"
+    "symfony/routing": "^7.1"
   },
   "require-dev": {
     "jackalope/jackalope": "^1.4",
