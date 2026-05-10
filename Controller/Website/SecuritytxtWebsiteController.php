@@ -61,7 +61,7 @@ class SecuritytxtWebsiteController extends AbstractController
             if (is_string($entity->getEncryption()) && ($entity->getEncryption() !== '')) {
                 $content .= 'Encryption: '.$entity->getEncryption()."\n";
             }
-            if (is_string($entity->getAcknowledgments()) && ($entity->getAcknowledgments() != '')) {
+            if (is_string($entity->getAcknowledgments()) && ($entity->getAcknowledgments() !== '')) {
                 $content .= 'Acknowledgments: '.$entity->getAcknowledgments()."\n";
             }
             if (is_string($entity->getPolicy()) && ($entity->getPolicy() !== '')) {
