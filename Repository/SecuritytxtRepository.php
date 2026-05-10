@@ -40,7 +40,7 @@ class SecuritytxtRepository extends ServiceEntityRepository
      */
     public function remove(int $id): void
     {
-        /** @var object $entity */
+        /** @var Securitytxt $entity */
         $entity = $this->getEntityManager()->getReference(
             $this->getClassName(),
             $id,

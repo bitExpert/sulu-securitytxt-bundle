@@ -43,8 +43,11 @@ class DoctrineListRepresentationFactory
         /** @var DoctrineFieldDescriptor[] $fieldDescriptors */
         $fieldDescriptors = $this->fieldDescriptorFactory->getFieldDescriptors($resourceKey);
 
+        /** @var class-string $className */
+        $className = $fieldDescriptors['id']->getEntityName();
+
         /** @var DoctrineListBuilder $listBuilder */
-        $listBuilder = $this->listBuilderFactory->create($fieldDescriptors['id']->getEntityName());
+        $listBuilder = $this->listBuilderFactory->create($className);
         $this->restHelper->initializeListBuilder($listBuilder, $fieldDescriptors);
 
         foreach ($parameters as $key => $value) {
@@ -62,7 +65,6 @@ class DoctrineListRepresentationFactory
         $items = $listBuilder->execute();
 
         // sort the items to reflect the order of the given ids if the list was requested to include specific ids
-        /** @var array<int, int>|null $requestedIds */
         $requestedIds = $this->listRestHelper->getIds();
         if (null !== $requestedIds) {
             $idPositions = \array_flip($requestedIds);
