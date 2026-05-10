@@ -20,8 +20,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 class SecuritytxtWebsiteController extends AbstractController
 {
@@ -36,18 +35,18 @@ class SecuritytxtWebsiteController extends AbstractController
         /** @var RequestAttributes|null $sulu */
         $sulu = $request->attributes->get('_sulu', null);
         if ($sulu === null) {
-            throw new NotFoundHttpException();
+            throw $this->createNotFoundException();
         }
 
         /** @var Portal|null $webspace */
         $webspace = $sulu->getAttribute('webspace', null);
         if ($webspace === null) {
-            throw new NotFoundHttpException();
+            throw $this->createNotFoundException();
         }
 
         $entity = $this->repository->findByWebspaceKey($webspace->getKey());
         if (!$entity instanceof Securitytxt) {
-            throw new NotFoundHttpException();
+            throw $this->createNotFoundException();
         }
 
         $content = '';

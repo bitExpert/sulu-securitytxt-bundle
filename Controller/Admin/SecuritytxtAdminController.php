@@ -17,8 +17,7 @@ use BitExpert\Sulu\SecuritytxtBundle\Repository\SecuritytxtRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Attribute\Route;
 
 /**
  * @phpstan-type SecuritytxtData array{
@@ -45,7 +44,7 @@ class SecuritytxtAdminController extends AbstractController
     {
         $entity = $this->repository->findById($id);
         if (!$entity instanceof Securitytxt) {
-            throw new NotFoundHttpException();
+            throw $this->createNotFoundException();
         }
 
         return $this->json($this->getDataForEntity($entity));
@@ -56,7 +55,7 @@ class SecuritytxtAdminController extends AbstractController
     {
         $entity = $this->repository->findById($id);
         if (!$entity instanceof Securitytxt) {
-            throw new NotFoundHttpException();
+            throw $this->createNotFoundException();
         }
 
         /** @var SecuritytxtData $data */
