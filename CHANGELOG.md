@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 0.7.0
+
+### Added
+
+- [#258](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/258) Dependency upgrades
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- [#263](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/263) Fix routing issues after Symfony 7.4 upgrade
+
 ## 0.6.0
 
 ### Added
