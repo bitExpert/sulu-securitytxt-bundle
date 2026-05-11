@@ -23,8 +23,6 @@ Create file `config/routes/securitytxt_admin.yaml`:
 ```yaml
 securitytxt_api:
     resource: "@BitExpertSuluSecuritytxtBundle/Resources/config/routing_api.yaml"
-    type: rest
-    prefix:   /admin/api
 ```
 
 Create file `config/routes/securitytxt_website.yaml`:
