@@ -20,7 +20,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use Symfony\Component\Routing\Attribute\Route;
 
 class SecuritytxtWebsiteController extends AbstractController
 {
@@ -29,7 +28,6 @@ class SecuritytxtWebsiteController extends AbstractController
     ) {
     }
 
-    #[Route(path: '.well-known/security.txt', methods: ['GET'])]
     public function getAction(Request $request): Response
     {
         /** @var RequestAttributes|null $sulu */
