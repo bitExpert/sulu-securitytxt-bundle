@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 0.8.0
+
+### Added
+
+- [#263](https://github.com/bitExpert/sulu-securitytxt-bundle/pull/263) Add Sulu 3 support
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
 ## 0.7.0
 
 ### Added
