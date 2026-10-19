@@ -16,7 +16,6 @@ use Sulu\Bundle\AdminBundle\Admin\Admin;
 use Sulu\Bundle\AdminBundle\Admin\View\ToolbarAction;
 use Sulu\Bundle\AdminBundle\Admin\View\ViewBuilderFactoryInterface;
 use Sulu\Bundle\AdminBundle\Admin\View\ViewCollection;
-use Sulu\Bundle\PageBundle\Admin\PageAdmin;
 use Sulu\Component\Security\Authorization\PermissionTypes;
 use Sulu\Component\Security\Authorization\SecurityCheckerInterface;
 use Sulu\Component\Security\Authorization\SecurityCondition;
@@ -63,10 +62,29 @@ class SecuritytxtAdmin extends Admin
                     ->setTabTitle('securitytxt.title')
                     ->setTabOrder(2048)
                     ->addToolbarActions($toolbarActions)
-                    ->setParent(PageAdmin::WEBSPACE_TABS_VIEW)
+                    ->setParent($this->getWebspaceTabsView())
                     ->addRerenderAttribute('webspace')
             );
         }
+    }
+
+    /**
+     * Resolves the "webspace tabs" view name across Sulu versions.
+     *
+     * Sulu 3 moved PageAdmin from `Sulu\Bundle\PageBundle\Admin\PageAdmin` to
+     * `Sulu\Page\Infrastructure\Sulu\Admin\PageAdmin`. The constant value is
+     * unchanged (`sulu_page.webspaces`).
+     */
+    private function getWebspaceTabsView(): string
+    {
+        if (class_exists(\Sulu\Page\Infrastructure\Sulu\Admin\PageAdmin::class)) {
+            return \Sulu\Page\Infrastructure\Sulu\Admin\PageAdmin::WEBSPACE_TABS_VIEW;
+        }
+
+        // Sulu 2.6 fallback. The class does not exist on Sulu 3, but this branch is only
+        // reached there when the old class is available.
+        // @phpstan-ignore class.notFound
+        return \Sulu\Bundle\PageBundle\Admin\PageAdmin::WEBSPACE_TABS_VIEW;
     }
 
     public function getSecurityContexts()
